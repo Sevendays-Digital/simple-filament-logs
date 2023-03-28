@@ -26,10 +26,10 @@ class SimpleFilamentLogResource extends Resource
             ->columns([
                 BadgeColumn::make('severity')
                     ->colors([
-                        'secondary' => static fn($state): bool => $state === SimpleLogSeverity::LOG->value,
-                        'warning' => static fn($state): bool => $state === SimpleLogSeverity::WARNING->value,
-                        'success' => static fn($state): bool => $state === SimpleLogSeverity::SUCCESS->value,
-                        'danger' => static fn($state): bool => $state === SimpleLogSeverity::ERROR->value,
+                        'secondary' => static fn ($state): bool => $state === SimpleLogSeverity::LOG->value,
+                        'warning' => static fn ($state): bool => $state === SimpleLogSeverity::WARNING->value,
+                        'success' => static fn ($state): bool => $state === SimpleLogSeverity::SUCCESS->value,
+                        'danger' => static fn ($state): bool => $state === SimpleLogSeverity::ERROR->value,
                     ]),
                 TextColumn::make('log')->searchable(),
                 TextColumn::make('by.name')->default('System')->searchable(),
@@ -44,7 +44,7 @@ class SimpleFilamentLogResource extends Resource
                         SimpleLogSeverity::WARNING->value => SimpleLogSeverity::WARNING->value,
                         SimpleLogSeverity::SUCCESS->value => SimpleLogSeverity::SUCCESS->value,
                         SimpleLogSeverity::ERROR->value => SimpleLogSeverity::ERROR->value,
-                    ])
+                    ]),
             ]);
     }
 

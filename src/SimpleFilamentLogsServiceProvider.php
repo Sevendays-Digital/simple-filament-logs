@@ -17,7 +17,7 @@ class SimpleFilamentLogsServiceProvider extends PluginServiceProvider
     public function boot(): void
     {
         parent::boot();
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 
     public function configurePackage(Package $package): void
