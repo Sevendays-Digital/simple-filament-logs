@@ -16,30 +16,8 @@ You can install the package via composer:
 composer require sevendaysdigital/simple-filament-logs
 ```
 
-You can publish and run the migrations with:
-
 ```bash
-php artisan vendor:publish --tag="simple-filament-logs-migrations"
 php artisan migrate
-```
-
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="simple-filament-logs-config"
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="simple-filament-logs-views"
-```
-
-This is the contents of the published config file:
-
-```php
-return [
-];
 ```
 
 ## Usage
@@ -58,12 +36,6 @@ SimpleLogger::success('Query ok');
 
 // Simple log without related entity.
 SimpleLogger::warning('Query ok');
-```
-
-Cleaning up:
-
-```
-// @todo
 ```
 
 ## Changelog
