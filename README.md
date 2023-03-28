@@ -46,19 +46,18 @@ return [
 
 ```php
 <?php
-use SevendaysDigital\SimpleFilamentLogs;
-use SevendaysDigital\SimpleFilamentLogsSeverity;
+use SevendaysDigital\SimpleFilamentLogs\Facades\SimpleLogger;
 
 $model = \App\Models\Model::first();
 
 // Log as user.
-SimpleFilamentLogs::log(message: 'Did this action', on: $model, by: Auth::user(), severity: SimpleFilamentLogsSeverity::INFO);
+SimpleLogger::error('Query failed with', on: $model, by: Auth::user());
 
 // Log as system.
-SimpleFilamentLogs::log(message: 'Did this action', on: $training); 
+SimpleLogger::success('Query ok');
 
 // Simple log without related entity.
-SimpleFilamentLogs::log(message: 'Did this action'); 
+SimpleLogger::warning('Query ok');
 ```
 
 Cleaning up:
