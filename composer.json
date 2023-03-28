@@ -1,74 +1,63 @@
 {
-    "name": "sevendaysdigital/simple-filament-logs",
-    "description": "Very simple log list for filament with helpers to use across code.",
-    "keywords": [
-        "SevendaysDigital",
-        "laravel",
-        "simple-filament-logs"
-    ],
-    "homepage": "https://github.com/sevendaysdigital/simple-filament-logs",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Harings Rob",
-            "email": "haringsrob@gmail.com",
-            "role": "Developer"
-        }
-    ],
-    "require": {
-        "php": "^8.0",
-        "filament/filament": "^2.0",
-        "spatie/laravel-package-tools": "^1.13.5",
-        "illuminate/contracts": "^9.0"
-    },
-    "require-dev": {
-        "laravel/pint": "^1.0",
-        "nunomaduro/collision": "^6.0",
-        "orchestra/testbench": "^7.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
-        "pestphp/pest-plugin-livewire": "^1.0",
-        "pestphp/pest-plugin-parallel": "^0.3",
-        "phpunit/phpunit": "^9.5",
-        "spatie/laravel-ray": "^1.26"
-    },
-    "autoload": {
-        "psr-4": {
-            "SevendaysDigital\\SimpleFilamentLogs\\": "src",
-            "SevendaysDigital\\SimpleFilamentLogs\\Database\\Factories\\": "database/factories"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "SevendaysDigital\\SimpleFilamentLogs\\Tests\\": "tests"
-        }
-    },
-    "scripts": {
-        "pint": "vendor/bin/pint",
-        "test:pest": "vendor/bin/pest --parallel",
-        "test": [
-            "@test:pest",
-            "@test:phpstan"
-        ]
-    },
-    "config": {
-        "sort-packages": true,
-        "allow-plugins": {
-            "composer/package-versions-deprecated": true,
-            "pestphp/pest-plugin": true,
-            "phpstan/extension-installer": true
-        }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "SevendaysDigital\\SimpleFilamentLogs\\SimpleFilamentLogsServiceProvider"
-            ],
-            "aliases": {
-                "SimpleFilamentLogs": "SevendaysDigital\\SimpleFilamentLogs\\Facades\\SimpleFilamentLogs"
-            }
-        }
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true
+  "name": "sevendaysdigital/simple-filament-logs",
+  "description": "Very simple log list for filament with helpers to use across code.",
+  "keywords": [
+    "SevendaysDigital",
+    "laravel",
+    "simple-filament-logs"
+  ],
+  "homepage": "https://github.com/sevendaysdigital/simple-filament-logs",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Harings Rob",
+      "email": "haringsrob@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "filament/filament": "^2.0",
+    "spatie/laravel-package-tools": "^1.13.5",
+    "illuminate/contracts": "^9.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "nunomaduro/collision": "^6.0",
+    "orchestra/testbench": "^7.0",
+    "pestphp/pest": "^1.21",
+    "pestphp/pest-plugin-laravel": "^1.1",
+    "pestphp/pest-plugin-livewire": "^1.0",
+    "pestphp/pest-plugin-parallel": "^0.3",
+    "phpunit/phpunit": "^9.5",
+    "spatie/laravel-ray": "^1.26"
+  },
+  "autoload": {
+    "psr-4": {
+      "SevendaysDigital\\SimpleFilamentLogs\\": "src"
+    }
+  },
+  "scripts": {
+    "pint": "vendor/bin/pint"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "pestphp/pest-plugin": true,
+      "phpstan/extension-installer": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "SevendaysDigital\\SimpleFilamentLogs\\SimpleFilamentLogsServiceProvider"
+      ],
+      "aliases": {
+        "SimpleLogger": "SevendaysDigital\\SimpleFilamentLogs\\Facades\\SimpleLogger"
+      }
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
 }

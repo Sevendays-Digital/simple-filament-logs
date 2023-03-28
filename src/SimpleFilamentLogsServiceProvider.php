@@ -3,6 +3,7 @@
 namespace SevendaysDigital\SimpleFilamentLogs;
 
 use Filament\PluginServiceProvider;
+use SevendaysDigital\SimpleFilamentLogs\Resources\SimpleFilamentLogResource;
 use Spatie\LaravelPackageTools\Package;
 
 class SimpleFilamentLogsServiceProvider extends PluginServiceProvider
@@ -10,28 +11,14 @@ class SimpleFilamentLogsServiceProvider extends PluginServiceProvider
     public static string $name = 'simple-filament-logs';
 
     protected array $resources = [
-        // CustomResource::class,
+        SimpleFilamentLogResource::class,
     ];
 
-    protected array $pages = [
-        // CustomPage::class,
-    ];
-
-    protected array $widgets = [
-        // CustomWidget::class,
-    ];
-
-    protected array $styles = [
-        'plugin-simple-filament-logs' => __DIR__.'/../resources/dist/simple-filament-logs.css',
-    ];
-
-    protected array $scripts = [
-        'plugin-simple-filament-logs' => __DIR__.'/../resources/dist/simple-filament-logs.js',
-    ];
-
-    // protected array $beforeCoreScripts = [
-    //     'plugin-simple-filament-logs' => __DIR__ . '/../resources/dist/simple-filament-logs.js',
-    // ];
+    public function boot(): void
+    {
+        parent::boot();
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+    }
 
     public function configurePackage(Package $package): void
     {

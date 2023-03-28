@@ -5,9 +5,8 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/sevendaysdigital/simple-filament-logs/Check%20&%20fix%20styling?label=code%20style)](https://github.com/sevendaysdigital/simple-filament-logs/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/sevendaysdigital/simple-filament-logs.svg?style=flat-square)](https://packagist.org/packages/sevendaysdigital/simple-filament-logs)
 
-
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+A simple logging utility for Filament. This does not replace exception catching/logging for that there is tools like
+Sentry.
 
 ## Installation
 
@@ -46,14 +45,26 @@ return [
 ## Usage
 
 ```php
-$simple-filament-logs = new SevendaysDigital\SimpleFilamentLogs();
-echo $simple-filament-logs->echoPhrase('Hello, SevendaysDigital!');
+<?php
+use SevendaysDigital\SimpleFilamentLogs;
+use SevendaysDigital\SimpleFilamentLogsSeverity;
+
+$model = \App\Models\Model::first();
+
+// Log as user.
+SimpleFilamentLogs::log(message: 'Did this action', on: $model, by: Auth::user(), severity: SimpleFilamentLogsSeverity::INFO);
+
+// Log as system.
+SimpleFilamentLogs::log(message: 'Did this action', on: $training); 
+
+// Simple log without related entity.
+SimpleFilamentLogs::log(message: 'Did this action'); 
 ```
 
-## Testing
+Cleaning up:
 
-```bash
-composer test
+```
+// @todo
 ```
 
 ## Changelog
